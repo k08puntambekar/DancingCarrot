@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Initial_Register">
+
+    <ImageView
+        android:id="@+id/back_arrow"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="5dp"
+        android:onClick="back"
+        android:src="@drawable/back_arrow" />
+
+    <LinearLayout
+        android:id="@+id/header_layout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+
+        <ImageView
+            android:id="@+id/logo_ImageView"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginLeft="10dp"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/slogan_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="35dp"
+            android:layout_marginRight="15dp"
+            android:text="One Place for all your apps!"
+            android:textAlignment="textEnd"
+            android:textColor="@color/black"
+            android:textSize="22dp"
+            android:gravity="end" />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:layout_marginTop="160dp">
+
+        <EditText
+            android:id="@+id/name_text"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="30dp"
+            android:drawableStart="@drawable/name"
+            android:drawablePadding="10dp"
+            android:hint="Name"
+            android:drawableLeft="@drawable/name" />
+
+        <EditText
+            android:id="@+id/username_text"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="90dp"
+            android:drawableStart="@drawable/username"
+            android:drawablePadding="10dp"
+            android:hint="Username"
+            android:drawableLeft="@drawable/username" />
+
+        <EditText
+            android:id="@+id/email_text"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="150dp"
+            android:drawableStart="@drawable/email"
+            android:drawablePadding="10dp"
+            android:hint="E-Mail"
+            android:drawableLeft="@drawable/email" />
+
+        <EditText
+            android:id="@+id/mobile_text"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="210dp"
+            android:drawableStart="@drawable/mobile"
+            android:drawablePadding="10dp"
+            android:hint="Mobile no"
+            android:drawableLeft="@drawable/mobile" />
+
+        <EditText
+            android:id="@+id/password_text"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="270dp"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="10dp"
+            android:hint="Password"
+            android:password="true"
+            android:drawableLeft="@drawable/password" />
+
+        <EditText
+            android:id="@+id/confirm_password_text"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="330dp"
+            android:drawableStart="@drawable/password"
+            android:drawablePadding="10dp"
+            android:hint="Confirm Password"
+            android:password="true"
+            android:drawableLeft="@drawable/password" />
+
+        <Button
+            android:id="@+id/register_button"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="400dp"
+            android:background="@drawable/custom_button"
+            android:text="Register"
+            app:backgroundTint="@null"
+            android:onClick="checkUser"/>
+
+    </RelativeLayout>
+
+</RelativeLayout>

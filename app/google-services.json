@@ -1,0 +1,68 @@
+{
+  "project_info": {
+    "project_number": "799770676056",
+    "project_id": "rekritiks-9c620",
+    "storage_bucket": "rekritiks-9c620.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799770676056:android:3fc6622593e0afc7eef32d",
+        "android_client_info": {
+          "package_name": "ReKritiks.Dashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799770676056-frh5k76e8cfhsld5ok8rslr13oo9lts9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFoIGwbgzI9V8uEE4nPSVStgSShlymAdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799770676056-frh5k76e8cfhsld5ok8rslr13oo9lts9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:799770676056:android:c2933a1ea197632ceef32d",
+        "android_client_info": {
+          "package_name": "ReKritiks.ReKritiks.Dashboard"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "799770676056-frh5k76e8cfhsld5ok8rslr13oo9lts9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCFoIGwbgzI9V8uEE4nPSVStgSShlymAdo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "799770676056-frh5k76e8cfhsld5ok8rslr13oo9lts9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
