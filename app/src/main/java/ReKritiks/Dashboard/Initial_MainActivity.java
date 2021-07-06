@@ -1,6 +1,7 @@
 package ReKritiks.Dashboard;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.preference.PreferenceManager;
 
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,6 +23,8 @@ public class Initial_MainActivity extends AppCompatActivity
     private EditText email_text;
     private EditText password_text;
     private FirebaseAuth firebaseAuth;
+    private SharedPreferences sharedPreferences;
+    private SharedPreferences.Editor edit;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +35,18 @@ public class Initial_MainActivity extends AppCompatActivity
         password_text = findViewById(R.id.password_text);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        sharedPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+        edit = sharedPreferences.edit();
+        if(sharedPreferences!=null && sharedPreferences.contains("isLoggedIn")){
+            if(sharedPreferences.getBoolean("isLoggedIn", false)){
+                if(sharedPreferences.contains("email")){
+                    Intent dashboardIntent = new Intent(Initial_MainActivity.this, Dashboard_Activity_Main.class);
+                    dashboardIntent.putExtra("Email",sharedPreferences.getString("email", ""));
+                    startActivity(dashboardIntent);
+                    finish();
+                }
+            }
+        }
     }
 
     public void login(View view) {
@@ -43,13 +59,19 @@ public class Initial_MainActivity extends AppCompatActivity
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         Toast.makeText(Initial_MainActivity.this, "Logged in", Toast.LENGTH_SHORT).show();
+                        edit.putBoolean("isLoggedIn", true);
+                        edit.putString("email", getEmail);
+                        edit.commit();
                         Intent dashboardIntent = new Intent(Initial_MainActivity.this, Dashboard_Activity_Main.class);
+                        dashboardIntent.putExtra("Email",getEmail);
                         startActivity(dashboardIntent);
+                        finish();
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {
                     @Override
                     public void onFailure(@NonNull Exception e) {
+                        edit.putBoolean("isLoggedIn", false);
                         Toast.makeText(Initial_MainActivity.this, "" + e.getMessage(), Toast.LENGTH_SHORT).show();
                     }
                 });

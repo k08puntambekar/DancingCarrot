@@ -67,28 +67,27 @@ public class Initial_Register extends AppCompatActivity {
         userMap.put("email", getEmail);
         userMap.put("password", getPassword);
 
-        databaseReference.child("Users")
-                .child(getName)
-                .setValue(userMap)
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void unused) {
-                        Toast.makeText(Initial_Register.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                    }
-                }).addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull @NotNull Exception e) {
-                Toast.makeText(Initial_Register.this, "Not registered", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         firebaseAuth.createUserWithEmailAndPassword(getEmail, getPassword)
                 .addOnSuccessListener(new OnSuccessListener<AuthResult>() {
                     @Override
                     public void onSuccess(AuthResult authResult) {
-                        Toast.makeText(Initial_Register.this, "Registered successfully", Toast.LENGTH_SHORT).show();
-                        Intent go_to_login = new Intent(Initial_Register.this, Initial_MainActivity.class);
-                        startActivity(go_to_login);
+                        databaseReference.child("Users")
+                                .child(getMobile)
+                                .setValue(userMap)
+                                .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                    @Override
+                                    public void onSuccess(Void unused) {
+                                        //Toast.makeText(Initial_Register.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                                        Toast.makeText(Initial_Register.this, "Registered successfully", Toast.LENGTH_SHORT).show();
+                                        Intent go_to_login = new Intent(Initial_Register.this, Initial_MainActivity.class);
+                                        startActivity(go_to_login);
+                                    }
+                                }).addOnFailureListener(new OnFailureListener() {
+                            @Override
+                            public void onFailure(@NonNull @NotNull Exception e) {
+                                Toast.makeText(Initial_Register.this, "Not registered", Toast.LENGTH_SHORT).show();
+                            }
+                        });
                     }
                 })
                 .addOnFailureListener(new OnFailureListener() {

@@ -1,6 +1,7 @@
 package ReKritiks.Dashboard.adapters;
 
 import android.content.Context;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Build;
@@ -42,11 +43,11 @@ public class Dashboard_AllApplicationsAdapter extends RecyclerView.Adapter<Dashb
     @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     public void onBindViewHolder(@NonNull @NotNull MyViewHolder holder, int position) {
-        String appCategory = String.valueOf(applications.get(position).activityInfo.applicationInfo.category);
-        //String categoryTitle = (String) ApplicationInfo.getCategoryTitle(context, appCategory);
+        int appCategory = applications.get(position).activityInfo.applicationInfo.category;
+        String categoryTitle = (String) ApplicationInfo.getCategoryTitle(context, appCategory);
         holder.appName.setText(applications.get(position).activityInfo.loadLabel(packageManager));
-        //holder.appCategory.setText(categoryTitle);
-        holder.appCategory.setText(appCategory);
+        holder.appCategory.setText(categoryTitle);
+        holder.appCategory.setText(appCategory + "");
         holder.appIcon.setImageDrawable(applications.get(position).activityInfo.loadIcon(packageManager));
     }
 

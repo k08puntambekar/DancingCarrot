@@ -18,4 +18,5 @@
     <string name="e_mail">E-Mail</string>
     <string name="leaderboard">Leaderboard</string>
     <string name="dashboard">Dashboard</string>
+    <string name="logout">Logout</string>
 </resources>

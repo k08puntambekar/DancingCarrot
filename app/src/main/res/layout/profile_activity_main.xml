@@ -33,12 +33,13 @@
                     android:src="@drawable/profile_picture" />
 
                 <TextView
+                    android:id="@+id/name_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
                     android:fontFamily="cursive"
-                    android:text="Jai Bihani"
+                    android:text="Your Name"
                     android:textSize="37sp"
                     android:textStyle="bold" />
             </LinearLayout>
@@ -159,6 +160,7 @@
                     android:src="@drawable/profile_picture" />
 
                 <TextView
+                    android:id="@+id/UsrName_Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
@@ -170,7 +172,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="100dp"
-
+                    android:visibility="gone"
                     android:drawableLeft="@drawable/ic_baseline_edit" />
             </LinearLayout>
 
@@ -189,7 +191,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-
+                    android:id="@+id/emailId_Text"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp"
@@ -214,7 +216,7 @@
 
                 <TextView
                     android:layout_width="wrap_content"
-
+                    android:id="@+id/phone_text"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp"
@@ -225,6 +227,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
@@ -233,14 +236,15 @@
                 android:weightSum="3">
 
                 <ImageView
+
                     android:layout_width="36dp"
                     android:layout_height="36dp"
                     android:src="@drawable/location_icon"
                     tools:srcCompat="@drawable/location_icon" />
 
                 <TextView
+                    android:visibility="gone"
                     android:layout_width="wrap_content"
-
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp"
