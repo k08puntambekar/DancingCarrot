@@ -50,24 +50,24 @@ public class Dashboard_Activity_Main extends AppCompatActivity implements Naviga
 
         profileImage = findViewById(R.id.profileImage);
         DrawerLayout drawer = binding.drawerLayout;
-        NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        NavigationView navigationView = findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
 
         Intent emailIntent = getIntent();
         email = emailIntent.getStringExtra("Email");
         Log.i("Dashboard Email:",email);
-        /*NavigationView navigationView = binding.navView;
+        //NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        mAppBarConfiguration = new AppBarConfiguration.Builder(
-                R.id.nav_home, R.id.nav_gallery, R.id.nav_slideshow)
+      /* mAppBarConfiguration = new AppBarConfiguration.Builder(
+                R.id.nav_home, R.id.frag_nav_leaderboard, R.id.logout)
                 .setDrawerLayout(drawer)
-                .build();
-        NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
+                .build();*/
+ /*       NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_content_main);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);*/
-        TabLayout tbl_pages= (TabLayout) findViewById(R.id.tbl_pages);
-        vp_pages= (ViewPager) findViewById(R.id.vp_pages);
+        TabLayout tbl_pages= findViewById(R.id.tbl_pages);
+        vp_pages= findViewById(R.id.vp_pages);
         PagerAdapter pagerAdapter=new Dashboard_FragmentAdapter(getSupportFragmentManager(), tbl_pages.getTabCount());
         vp_pages.setAdapter(pagerAdapter);
 
@@ -94,7 +94,7 @@ public class Dashboard_Activity_Main extends AppCompatActivity implements Naviga
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         if (id == R.id.frag_nav_leaderboard) {
-            getSupportFragmentManager().beginTransaction().add(R.id.relative_layout, new Leaderboard_MainActivity()).commit();
+            getSupportFragmentManager().beginTransaction().add(R.id.relative_layout, new Leaderboard_MainActivity()).addToBackStack(null).commit();
         } else if (id == R.id.frag_nav_dashboard) {
             Intent dashboardIntent= new Intent(this,Dashboard_Activity_Main.class);
             startActivity(dashboardIntent);
