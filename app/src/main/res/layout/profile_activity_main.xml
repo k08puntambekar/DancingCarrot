@@ -159,21 +159,16 @@
                     android:layout_height="36dp"
                     android:src="@drawable/profile_picture" />
 
-                <TextView
+                <EditText
                     android:id="@+id/UsrName_Text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:hint="Your Name Here"
                     android:paddingLeft="20dp"
-
                     android:textStyle="bold" />
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="100dp"
-                    android:visibility="gone"
-                    android:drawableLeft="@drawable/ic_baseline_edit" />
+
             </LinearLayout>
 
             <LinearLayout
@@ -189,11 +184,12 @@
                     android:layout_height="36dp"
                     android:src="@drawable/email_icon" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <EditText
                     android:id="@+id/emailId_Text"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:hint="Email Here"
                     android:paddingLeft="20dp"
                     android:textStyle="bold" />
 
@@ -213,25 +209,25 @@
                     android:layout_height="36dp"
                     android:src="@drawable/phone_icon" />
 
-                <TextView
-                    android:layout_width="wrap_content"
+                <EditText
                     android:id="@+id/phone_text"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
+                    android:hint="Phone Number"
                     android:paddingLeft="20dp"
-
                     android:textStyle="bold" />
 
 
             </LinearLayout>
 
             <LinearLayout
-                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="10dp"
                 android:orientation="horizontal"
                 android:paddingLeft="25dp"
+                android:visibility="gone"
                 android:weightSum="3">
 
                 <ImageView
@@ -242,16 +238,23 @@
                     tools:srcCompat="@drawable/location_icon" />
 
                 <TextView
-                    android:visibility="gone"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"
                     android:paddingLeft="20dp"
                     android:text="Location"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    android:visibility="gone" />
 
 
             </LinearLayout>
+
+            <Button
+                android:id="@+id/updateBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="100dp"
+                android:text="@string/update" />
 
 
         </LinearLayout>

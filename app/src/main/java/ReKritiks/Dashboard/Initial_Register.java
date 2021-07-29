@@ -72,7 +72,7 @@ public class Initial_Register extends AppCompatActivity {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         databaseReference.child("Users")
-                                .child(getMobile)
+                                .child(FirebaseAuth.getInstance().getCurrentUser().getUid())
                                 .setValue(userMap)
                                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                                     @Override

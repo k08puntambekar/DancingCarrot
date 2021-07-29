@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.Menu;
 import android.view.View;
@@ -98,12 +99,14 @@ public class Dashboard_Activity_Main extends AppCompatActivity implements Naviga
         } else if (id == R.id.frag_nav_dashboard) {
             Intent dashboardIntent= new Intent(this,Dashboard_Activity_Main.class);
             startActivity(dashboardIntent);
+            finish();
         }
         else if (id == R.id.logout) {
             edit.clear();
             edit.commit();
             Intent logoutIntent= new Intent(this,Initial_MainActivity.class);
             startActivity(logoutIntent);
+            finish();
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -119,5 +122,6 @@ public class Dashboard_Activity_Main extends AppCompatActivity implements Naviga
     {
 
     }
+
 
 }

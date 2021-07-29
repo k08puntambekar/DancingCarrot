@@ -49,6 +49,7 @@ public class Dashboard_AllApplicationsAdapter extends RecyclerView.Adapter<Dashb
         holder.appCategory.setText(categoryTitle);
         holder.appCategory.setText(appCategory + "");
         holder.appIcon.setImageDrawable(applications.get(position).activityInfo.loadIcon(packageManager));
+
     }
 
     @Override
