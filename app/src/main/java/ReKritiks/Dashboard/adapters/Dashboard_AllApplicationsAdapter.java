@@ -1,10 +1,13 @@
 package ReKritiks.Dashboard.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
 import android.os.Build;
+import android.os.Parcelable;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,6 +19,7 @@ import androidx.annotation.RequiresApi;
 import androidx.recyclerview.widget.RecyclerView;
 
 import ReKritiks.Dashboard.R;
+import ReKritiks.Dashboard.Review_Dummy_Activity;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -49,6 +53,16 @@ public class Dashboard_AllApplicationsAdapter extends RecyclerView.Adapter<Dashb
         holder.appCategory.setText(categoryTitle);
         holder.appCategory.setText(appCategory + "");
         holder.appIcon.setImageDrawable(applications.get(position).activityInfo.loadIcon(packageManager));
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent review_intent = new Intent(context,Review_Dummy_Activity.class);
+                review_intent.putExtra("app_name", applications.get(position));
+                context.startActivity(review_intent);
+
+            }
+        });
 
     }
 

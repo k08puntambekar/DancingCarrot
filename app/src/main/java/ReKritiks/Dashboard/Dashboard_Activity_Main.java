@@ -56,7 +56,7 @@ public class Dashboard_Activity_Main extends AppCompatActivity implements Naviga
 
         Intent emailIntent = getIntent();
         email = emailIntent.getStringExtra("Email");
-        Log.i("Dashboard Email:",email);
+        //Log.i("Dashboard Email:",email);
         //NavigationView navigationView = binding.navView;
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
@@ -118,10 +118,6 @@ public class Dashboard_Activity_Main extends AppCompatActivity implements Naviga
         startActivity(profileIntent);
     }
 
-    public void leaderboard(View view)
-    {
-
-    }
 
 
 }

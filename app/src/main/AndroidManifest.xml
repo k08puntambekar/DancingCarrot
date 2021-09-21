@@ -3,17 +3,19 @@
     package="ReKritiks.Dashboard">
 
     <application
+        android:name=".ReKritiksApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/initial_app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Dashboard_Module">
-        <activity android:name="ReKritiks.Dashboard.Dashboard_Activity_Main" />
-        <activity android:name="ReKritiks.Dashboard.Initial_Register" />
-        <activity android:name="ReKritiks.Dashboard.Profile_MainActivity"/>
+        <activity android:name=".Review_Dummy_Activity"></activity>
+        <activity android:name=".Dashboard_Activity_Main" />
+        <activity android:name=".Initial_Register" />
+        <activity android:name=".Profile_MainActivity" />
         <activity
-            android:name="ReKritiks.Dashboard.Initial_MainActivity"
+            android:name=".Initial_MainActivity"
             android:theme="@style/Theme.Dashboard_Module.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +23,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
     </application>
 
 </manifest>

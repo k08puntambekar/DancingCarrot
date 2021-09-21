@@ -48,9 +48,9 @@ public class Dashboard_FragmentAdapter extends FragmentPagerAdapter {
             //Your tab titles
             //
             case 0:return "All Apps";
-            case 1:return "Games";
+/*            case 1:return "Games";
             case 2: return "Music";
-            case 3:return "Apps";
+            case 3:return "Apps";*/
             default:return null;
         }
     }

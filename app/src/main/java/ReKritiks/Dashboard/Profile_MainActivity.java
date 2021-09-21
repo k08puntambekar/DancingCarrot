@@ -34,6 +34,9 @@ public class Profile_MainActivity extends AppCompatActivity {
     DatabaseReference userRef;
     FirebaseAuth mAuth;
     private String oldName,oldEmail,oldPhone;
+    private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
 
     @Override
@@ -54,8 +57,10 @@ public class Profile_MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
          rootRef = FirebaseDatabase.getInstance().getReference();
          userRef = rootRef.child(Constants.USER);
-
-        userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+        /*irebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance();
+        databaseReference = firebaseDatabase.getReference();*/
+        userRef.orderByChild("email").equalTo(profEmail).addListenerForSingleValueEvent(new ValueEventListener() {
              @Override
              public void onDataChange(@NonNull @NotNull DataSnapshot snapshot) {
                  for(DataSnapshot snap: snapshot.getChildren()){
